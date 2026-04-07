@@ -259,11 +259,7 @@
       color: var(--text);
     }
 
-    .text-highlight {
-      background: linear-gradient(transparent 58%, var(--pop-soft) 58%);
-      padding: 0 2px;
-    }
-
+    
     .testimonial-shell {
       position: relative;
     }
@@ -362,17 +358,6 @@
       right: -60px;
       pointer-events: none;
     }
-
-    .trial-card::after {
-      content: "";
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      top: 50%;
-      border-top: 1.5px dashed rgba(255,255,255,0.18);
-      pointer-events: none;
-    }
-
     .trial-content {
       position: relative;
       z-index: 1;
@@ -522,9 +507,10 @@
     }
 
     .contact-item .value {
-      font-size: 1rem;
+      font-size: 0.94rem;
       font-weight: 600;
       word-break: break-word;
+      overflow-wrap: anywhere;
       line-height: 1.45;
       display: flex;
       align-items: center;
@@ -628,19 +614,19 @@
           <div class="point">
             <span>Clarity</span>
             <p>
-              We break down <strong>key concepts</strong> into simple steps so students can understand better, practise smarter, and build <span class="text-highlight">real confidence</span> over time.
+              We break down <strong>key concepts</strong> into simple steps so students can understand better, practise smarter, and build real confidence over time.
             </p>
           </div>
           <div class="point">
             <span>Flexible</span>
             <p>
-              Choose between <strong>1-to-1</strong> or <strong>group lessons</strong> based on your child’s learning needs. Pricing differs, so <span class="text-highlight">enquire for details</span>.
+              Choose between <strong>1-to-1</strong> or <strong>group lessons</strong> based on your child’s learning needs. Pricing differs, so enquire for details.
             </p>
           </div>
           <div class="point">
             <span>Online</span>
             <p>
-              Our online classes save <strong>travel time</strong>, keep learning convenient, and make it easier for students to stay <span class="text-highlight">consistent every week</span>.
+              Our online classes save <strong>travel time</strong>, keep learning convenient, and make it easier for students to stay consistent every week.
             </p>
           </div>
         </div>
@@ -710,31 +696,17 @@
 
       <div class="media-grid">
         <div class="embed-card glass-card">
-          <h3>TikTok Video</h3>
+          <h3>TikTok</h3>
           <p class="embed-note">Replace the box below with TikTok embed code.</p>
           <div class="embed-placeholder">Paste your TikTok embed here</div>
           <code>&lt;blockquote class="tiktok-embed"&gt;...&lt;/blockquote&gt;</code>
         </div>
 
         <div class="embed-card glass-card">
-          <h3>Instagram Reel / Post</h3>
+          <h3>Instagram</h3>
           <p class="embed-note">Replace the box below with Instagram embed code.</p>
           <div class="embed-placeholder">Paste your Instagram embed here</div>
           <code>&lt;blockquote class="instagram-media"&gt;...&lt;/blockquote&gt;</code>
-        </div>
-
-        <div class="embed-card glass-card">
-          <h3>Facebook Video / Reel</h3>
-          <p class="embed-note">You can embed a Facebook post, reel, or video here.</p>
-          <div class="embed-placeholder">Paste your Facebook embed here</div>
-          <code>&lt;iframe src="https://www.facebook.com/plugins/video.php?..."&gt;&lt;/iframe&gt;</code>
-        </div>
-
-        <div class="embed-card glass-card">
-          <h3>More Content</h3>
-          <p class="embed-note">Use this space for another post, reel, result video, or student content.</p>
-          <div class="embed-placeholder">Add another embedded post here</div>
-          <code>Duplicate any embed style you want to feature more content.</code>
         </div>
       </div>
     </div>
