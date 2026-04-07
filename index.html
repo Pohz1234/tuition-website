@@ -50,9 +50,9 @@
     }
 
     .section-title {
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
       text-align: center;
       margin-bottom: 14px;
     }
@@ -97,7 +97,7 @@
 
     .logo-placeholder {
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
@@ -136,16 +136,28 @@
     .hero-badge {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      background: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.18);
       backdrop-filter: blur(8px);
-      color: #fff6d5;
+      color: white;
       border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 18px;
+      padding: 12px 18px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--pop);
+      box-shadow: 0 0 16px rgba(212,175,55,0.95);
+      flex-shrink: 0;
     }
 
     .hero h1 {
@@ -164,7 +176,8 @@
       margin: 0 auto 24px;
     }
 
-    .hero-cta {
+    .hero-cta,
+    .contact-cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -173,12 +186,13 @@
       border-radius: 999px;
       padding: 15px 28px;
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 800;
       box-shadow: 0 12px 30px rgba(0,0,0,0.16);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .hero-cta:hover {
+    .hero-cta:hover,
+    .contact-cta:hover {
       transform: translateY(-2px);
       box-shadow: 0 16px 36px rgba(0,0,0,0.18);
     }
@@ -192,16 +206,22 @@
     }
 
     .about-card {
-      padding: 38px;
-      max-width: 900px;
+      padding: 42px;
+      max-width: 960px;
       margin: 0 auto;
     }
 
-    .about-card p.intro {
-      color: var(--muted);
+    .about-intro {
+      max-width: 760px;
+      margin: 0 auto 30px;
       text-align: center;
-      max-width: 720px;
-      margin: 0 auto 26px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .about-intro strong {
+      color: var(--text);
+      font-weight: 800;
     }
 
     .point-grid {
@@ -212,59 +232,105 @@
     }
 
     .point {
-      background: rgba(255,255,255,0.62);
+      background: rgba(255,255,255,0.68);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px;
+      border-radius: 22px;
+      padding: 24px;
     }
 
     .point span {
       display: inline-block;
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 10px;
-      font-weight: 700;
+      margin-bottom: 12px;
+      font-weight: 800;
     }
 
     .point p {
-      font-size: 0.98rem;
+      font-size: 1rem;
       color: #1c1c1a;
+      line-height: 1.75;
     }
 
-    .testimonial-grid {
+    .point strong {
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .text-highlight {
+      background: linear-gradient(transparent 58%, var(--pop-soft) 58%);
+      padding: 0 2px;
+    }
+
+    .testimonial-shell {
+      position: relative;
+    }
+
+    .testimonial-toolbar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .carousel-btn {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .testimonial-carousel {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-auto-flow: column;
+      grid-auto-columns: calc(33.333% - 15px);
       gap: 22px;
-      margin-top: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+
+    .testimonial-carousel::-webkit-scrollbar {
+      display: none;
     }
 
     .testimonial {
-      padding: 28px;
-      min-height: 220px;
+      scroll-snap-align: start;
+      padding: 18px;
+      min-height: 360px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .testimonial-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.05);
     }
 
     .testimonial .quote {
-      font-size: 1.02rem;
+      font-size: 1rem;
       color: #1b1b18;
-      margin-bottom: 18px;
+      line-height: 1.7;
     }
 
     .testimonial .name {
       color: var(--muted);
       font-size: 0.92rem;
-      font-weight: 600;
-    }
-
-    .placeholder-note {
-      color: var(--muted);
-      font-size: 0.92rem;
-      text-align: center;
-      margin-top: 16px;
+      font-weight: 700;
+      margin-top: auto;
     }
 
     .trial-wrap {
@@ -297,6 +363,21 @@
       pointer-events: none;
     }
 
+    .trial-card::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 50%;
+      border-top: 1.5px dashed rgba(255,255,255,0.18);
+      pointer-events: none;
+    }
+
+    .trial-content {
+      position: relative;
+      z-index: 1;
+    }
+
     .trial-label {
       color: #f6e8b8;
       letter-spacing: 0.14em;
@@ -315,16 +396,16 @@
 
     .trial-card p {
       color: rgba(255,255,255,0.82);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .price {
-      display: inline-block;
+      display: block;
       font-size: clamp(3rem, 8vw, 5.5rem);
       line-height: 1;
       font-weight: 800;
       color: white;
-      margin: 6px 0 20px;
+      margin: 8px 0 16px;
       animation: pulsePrice 1.8s infinite ease-in-out;
     }
 
@@ -337,13 +418,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       background: white;
       color: #111;
-      padding: 16px 28px;
+      padding: 15px 26px;
       border-radius: 999px;
       font-weight: 800;
       transition: transform 0.2s ease;
+      margin-top: 2px;
     }
 
     .trial-btn:hover {
@@ -367,8 +448,14 @@
       letter-spacing: -0.03em;
     }
 
+    .embed-note {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-bottom: 14px;
+    }
+
     .embed-placeholder {
-      height: 260px;
+      height: 240px;
       border: 1.5px dashed rgba(17,17,17,0.18);
       border-radius: 20px;
       display: flex;
@@ -378,6 +465,18 @@
       text-align: center;
       padding: 18px;
       background: rgba(255,255,255,0.44);
+    }
+
+    .embed-card code {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #333;
+      word-break: break-word;
+      background: rgba(255,255,255,0.7);
+      border-radius: 14px;
+      padding: 12px;
+      border: 1px solid var(--line);
     }
 
     .contact-card {
@@ -398,6 +497,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-bottom: 24px;
+      align-items: stretch;
     }
 
     .contact-item {
@@ -405,6 +505,10 @@
       border-radius: 20px;
       background: rgba(255,255,255,0.62);
       border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 122px;
     }
 
     .contact-item .label {
@@ -413,7 +517,7 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       font-weight: 700;
     }
 
@@ -421,23 +525,11 @@
       font-size: 1rem;
       font-weight: 600;
       word-break: break-word;
-    }
-
-    .contact-cta {
-      display: inline-flex;
+      line-height: 1.45;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: #111;
-      color: white;
-      padding: 16px 28px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-    }
-
-    .contact-cta:hover {
-      transform: translateY(-2px);
+      min-height: 44px;
     }
 
     .footer {
@@ -471,10 +563,13 @@
 
     @media (max-width: 980px) {
       .point-grid,
-      .testimonial-grid,
       .media-grid,
       .contact-list {
         grid-template-columns: 1fr;
+      }
+
+      .testimonial-carousel {
+        grid-auto-columns: 85%;
       }
 
       .hero {
@@ -490,6 +585,11 @@
       .logo-box img {
         height: 44px;
       }
+
+      .trial-card::after {
+        left: 12px;
+        right: 12px;
+      }
     }
   </style>
 </head>
@@ -498,7 +598,7 @@
   <header class="topbar">
     <div class="container logo-wrap">
       <div class="logo-box">
-        <!-- Replace logo-placeholder with your own image -->
+        <!-- Replace this with your own logo -->
         <!-- Example: <img src="logo.png" alt="MathScienceDojo Logo"> -->
         <div class="logo-placeholder">YOUR LOGO HERE</div>
       </div>
@@ -507,10 +607,10 @@
 
   <section class="hero" id="home">
     <div class="hero-content">
-      <div class="hero-badge">⚠ Limited slots available</div>
-      <h1>Maths & Science, made simpler.</h1>
-      <p>Focused online tuition for Primary 5 & 6 students.</p>
-      <a href="https://wa.me/6593508124" class="hero-cta" target="_blank">DM us now</a>
+      <div class="hero-badge"><span class="dot"></span> Limited slots available</div>
+      <h1>Maths &amp; Science, made simpler.</h1>
+      <p>Focused online tuition for Primary 5 &amp; 6 students.</p>
+      <a href="https://wa.me/6593508124" class="hero-cta" target="_blank">Enquire now</a>
     </div>
   </section>
 
@@ -520,18 +620,28 @@
       <p class="section-subtitle">Focused online tuition for Primary 5 and 6 Maths and Science.</p>
 
       <div class="about-card glass-card">
+        <p class="about-intro">
+          We keep lessons <strong>clear</strong>, <strong>structured</strong>, and <strong>results-focused</strong> so students can build confidence step by step.
+        </p>
+
         <div class="point-grid">
           <div class="point">
             <span>Clarity</span>
-            <p>We help students understand concepts clearly, practise effectively, and build confidence over time.</p>
+            <p>
+              We break down <strong>key concepts</strong> into simple steps so students can understand better, practise smarter, and build <span class="text-highlight">real confidence</span> over time.
+            </p>
           </div>
           <div class="point">
             <span>Flexible</span>
-            <p>We offer 1-to-1 sessions or group sessions. Pricing differs, so DM us for more info.</p>
+            <p>
+              Choose between <strong>1-to-1</strong> or <strong>group lessons</strong> based on your child’s learning needs. Pricing differs, so <span class="text-highlight">enquire for details</span>.
+            </p>
           </div>
           <div class="point">
             <span>Online</span>
-            <p>Online lessons save travel time and allow for more flexible scheduling.</p>
+            <p>
+              Our online classes save <strong>travel time</strong>, keep learning convenient, and make it easier for students to stay <span class="text-highlight">consistent every week</span>.
+            </p>
           </div>
         </div>
       </div>
@@ -541,39 +651,54 @@
   <section class="section" id="testimonials">
     <div class="container">
       <h2 class="section-title">Parent Testimonials</h2>
-      <p class="section-subtitle">You can replace these placeholders with your real reviews.</p>
 
-      <div class="testimonial-grid">
-        <div class="testimonial glass-card">
-          <div class="quote">“Add parent testimonial here. Keep it short, strong, and easy to read.”</div>
-          <div class="name">— Parent Name</div>
+      <div class="testimonial-shell">
+        <div class="testimonial-toolbar">
+          <button class="carousel-btn" onclick="scrollTestimonials(-1)" aria-label="Previous testimonial">&#8592;</button>
+          <button class="carousel-btn" onclick="scrollTestimonials(1)" aria-label="Next testimonial">&#8594;</button>
         </div>
 
-        <div class="testimonial glass-card">
-          <div class="quote">“Add another testimonial here. This section is meant to build trust quickly.”</div>
-          <div class="name">— Parent Name</div>
-        </div>
+        <div class="testimonial-carousel" id="testimonialCarousel">
+          <div class="testimonial glass-card">
+            <img src="testimonial-1.jpg" alt="Parent testimonial 1" class="testimonial-photo">
+            <div class="quote">“Replace this with your actual testimonial text. You can also use a screenshot of a WhatsApp message or parent feedback image here.”</div>
+            <div class="name">— Parent Name</div>
+          </div>
 
-        <div class="testimonial glass-card">
-          <div class="quote">“You can also use results, confidence improvements, or comments on your teaching style.”</div>
-          <div class="name">— Parent Name</div>
+          <div class="testimonial glass-card">
+            <img src="testimonial-2.jpg" alt="Parent testimonial 2" class="testimonial-photo">
+            <div class="quote">“This layout is made for pictures plus short written feedback, so it looks more real and easier to swipe through on mobile.”</div>
+            <div class="name">— Parent Name</div>
+          </div>
+
+          <div class="testimonial glass-card">
+            <img src="testimonial-3.jpg" alt="Parent testimonial 3" class="testimonial-photo">
+            <div class="quote">“You can duplicate more cards later if you want to add more parent screenshots, results, or review photos.”</div>
+            <div class="name">— Parent Name</div>
+          </div>
+
+          <div class="testimonial glass-card">
+            <img src="testimonial-4.jpg" alt="Parent testimonial 4" class="testimonial-photo">
+            <div class="quote">“This is another sample slide so the section feels like a proper swipe carousel instead of a static testimonial block.”</div>
+            <div class="name">— Parent Name</div>
+          </div>
         </div>
       </div>
-
-      <p class="placeholder-note">You can duplicate these boxes if you want more testimonials later.</p>
     </div>
   </section>
 
   <section class="section" id="trial">
     <div class="container">
       <div class="trial-wrap">
-        <a href="https://wa.me/6593508124" class="trial-card" target="_blank">
-          <div class="trial-label">Trial Class Available</div>
-          <h3>Start with a trial</h3>
-          <p>Tap below to enquire and secure a slot.</p>
-          <div class="price">$10</div>
-          <div class="trial-btn">DM for trial class</div>
-        </a>
+        <div class="trial-card">
+          <div class="trial-content">
+            <div class="trial-label">Trial Class Available</div>
+            <h3>Start with a trial</h3>
+            <p>Tap below to enquire and secure a slot.</p>
+            <div class="price">$10</div>
+            <a href="https://wa.me/6593508124" class="trial-btn" target="_blank">Enquire for trial class</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -581,21 +706,35 @@
   <section class="section" id="media">
     <div class="container">
       <h2 class="section-title">Watch Our Content</h2>
-      <p class="section-subtitle">Add your TikTok and Instagram videos here so parents can view them directly.</p>
+      <p class="section-subtitle">You can embed your TikTok, Instagram, and Facebook content here in a simple 2 by 2 layout.</p>
 
       <div class="media-grid">
         <div class="embed-card glass-card">
-          <h3>TikTok</h3>
-          <div class="embed-placeholder">
-            Paste your TikTok embed code here later.
-          </div>
+          <h3>TikTok Video</h3>
+          <p class="embed-note">Replace the box below with TikTok embed code.</p>
+          <div class="embed-placeholder">Paste your TikTok embed here</div>
+          <code>&lt;blockquote class="tiktok-embed"&gt;...&lt;/blockquote&gt;</code>
         </div>
 
         <div class="embed-card glass-card">
-          <h3>Instagram</h3>
-          <div class="embed-placeholder">
-            Paste your Instagram embed code here later.
-          </div>
+          <h3>Instagram Reel / Post</h3>
+          <p class="embed-note">Replace the box below with Instagram embed code.</p>
+          <div class="embed-placeholder">Paste your Instagram embed here</div>
+          <code>&lt;blockquote class="instagram-media"&gt;...&lt;/blockquote&gt;</code>
+        </div>
+
+        <div class="embed-card glass-card">
+          <h3>Facebook Video / Reel</h3>
+          <p class="embed-note">You can embed a Facebook post, reel, or video here.</p>
+          <div class="embed-placeholder">Paste your Facebook embed here</div>
+          <code>&lt;iframe src="https://www.facebook.com/plugins/video.php?..."&gt;&lt;/iframe&gt;</code>
+        </div>
+
+        <div class="embed-card glass-card">
+          <h3>More Content</h3>
+          <p class="embed-note">Use this space for another post, reel, result video, or student content.</p>
+          <div class="embed-placeholder">Add another embedded post here</div>
+          <code>Duplicate any embed style you want to feature more content.</code>
         </div>
       </div>
     </div>
@@ -604,7 +743,7 @@
   <section class="section" id="contact">
     <div class="container">
       <h2 class="section-title">Contact Us</h2>
-      <p class="section-subtitle">DM us for more information.</p>
+      <p class="section-subtitle">Enquire with us for more information.</p>
 
       <div class="contact-card glass-card">
         <div class="contact-main">The fastest way to reach us is via WhatsApp.</div>
@@ -626,7 +765,7 @@
           </div>
         </div>
 
-        <a href="https://wa.me/6593508124" class="contact-cta" target="_blank">WhatsApp us now</a>
+        <a href="https://wa.me/6593508124" class="contact-cta" target="_blank">Enquire now</a>
       </div>
     </div>
   </section>
@@ -640,6 +779,22 @@
   <a href="https://wa.me/6593508124" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     💬
   </a>
+
+  <script>
+    function scrollTestimonials(direction) {
+      const carousel = document.getElementById('testimonialCarousel');
+      const cardWidth = carousel.querySelector('.testimonial').offsetWidth + 22;
+      carousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    }
+  </script>
+
+  <!--
+    TIKTOK SCRIPT (add once, before closing body if you use TikTok embed)
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+    INSTAGRAM SCRIPT (add once, before closing body if you use Instagram embed)
+    <script async src="//www.instagram.com/embed.js"></script>
+  -->
 
 </body>
 </html>
