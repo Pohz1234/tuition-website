@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MathScienceDojo | Online Tuition</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: #0f2747;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f2747, #1a4f8b);
+      color: white;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #0f2747;
+    }
+
+    .btn-primary:hover {
+      background: #e5ecf5;
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.1rem;
+      margin-bottom: 16px;
+      color: #0f2747;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #5b6676;
+    }
+
+    .about-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      color: #0f2747;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .highlight-section {
+      background: linear-gradient(135deg, #eaf2ff, #f7fbff);
+    }
+
+    .offer-box {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #0f2747;
+      color: white;
+      border-radius: 22px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(15, 39, 71, 0.2);
+    }
+
+    .offer-box h2 {
+      margin-bottom: 16px;
+      font-size: 2rem;
+    }
+
+    .offer-box p {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .contact-box {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      background: white;
+      padding: 36px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-box a {
+      color: #0f2747;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #0f2747;
+      color: white;
+      text-align: center;
+      padding: 24px 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">MathScienceDojo</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#subjects">Subjects</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Online Tuition for Primary 5 & 6 Maths & Science</h1>
+      <p>
+        Focused online tuition to help Primary 5 and 6 students strengthen their Maths
+  and Science foundations with clear guidance and consistent support.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Join a Trial Class</a>
+        <a href="#subjects" class="btn btn-secondary">View Subjects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2 class="section-title">About MathScienceDojo</h2>
+    <p class="section-subtitle">
+      A clean, focused, and supportive learning space for students to strengthen
+      their Maths and Science foundations with confidence.
+    </p>
+
+    <div class="about-box">
+      <p>
+        At MathScienceDojo, we focus on helping students understand concepts clearly,
+        practise effectively, and build consistency over time. Our lessons are designed
+        to support Primary 5 and 6 students preparing for stronger academic performance
+        and greater confidence in school.
+      </p>
+    </div>
+  </section>
+
+  <section class="section highlight-section" id="subjects">
+    <h2 class="section-title">Subjects Offered</h2>
+    <p class="section-subtitle">
+      Carefully structured lessons tailored to strengthen understanding and exam readiness.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Mathematics</h3>
+        <p>
+          Learn problem-solving strategies, improve accuracy, and build confidence
+          in key Maths topics step by step.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Science</h3>
+        <p>
+          Strengthen core concepts, answer techniques, and application skills
+          through guided explanation and practice.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Online Saturday Classes</h3>
+        <p>
+          Convenient online learning with structured support, ideal for students
+          who want focused weekend tuition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why-us">
+    <h2 class="section-title">Why Parents Choose Us</h2>
+    <p class="section-subtitle">
+      Designed to be clear, supportive, and effective for students who need strong foundations.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Focused Teaching</h3>
+        <p>
+          Lessons are structured to reduce confusion and help students understand
+          exactly what they need to improve.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Strong Foundations</h3>
+        <p>
+          We emphasise the basics first so students can build lasting confidence
+          before moving into harder concepts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Simple & Convenient</h3>
+        <p>
+          Saturday online classes make it easier for parents and students to stay
+          consistent without unnecessary travel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="offer-box">
+      <h2>Trial Class Available</h2>
+      <p><strong>Primary 5 & 6 Maths & Science</strong></p>
+      <p><strong>Only Saturday classes available</strong></p>
+      <p><strong>Trial Class: $10</strong></p>
+      <p style="color: #ffd700;"><strong>⚠ Limited slots available</strong></p>
+      <p>Materials will be delivered for lesson support.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-subtitle">
+      Enquire now to find out more or secure a slot.
+    </p>
+
+    <div class="contact-box">
+      <p>DM us for more information.</p>
+      <p>Email: <a href="mailto:mathsciencedojo@gmail.com">mathsciencedojo@gmail.com</a></p>
+      <p>Instagram: <a href="#">@mathsciencedojo</a></p>
+      <p>Tiktok: <a href="#">@mathsciencedojo</a></p>
+      <br />
+<a href="https://wa.me/6593508124" class="btn btn-primary">WhatsApp Us Now</a>    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 MathScienceDojo. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
