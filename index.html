@@ -50,9 +50,9 @@
     }
 
     .section-title {
-      font-size: clamp(1.9rem, 3vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.05em;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
       text-align: center;
       margin-bottom: 14px;
     }
@@ -97,7 +97,7 @@
 
     .logo-placeholder {
       font-size: 1rem;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
@@ -136,28 +136,16 @@
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.14);
       border: 1px solid rgba(255,255,255,0.18);
       backdrop-filter: blur(8px);
-      color: white;
+      color: #fff6d5;
       border-radius: 999px;
-      padding: 12px 18px;
-      font-size: 0.9rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero-badge .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--pop);
-      box-shadow: 0 0 16px rgba(212,175,55,0.95);
-      flex-shrink: 0;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
@@ -176,8 +164,7 @@
       margin: 0 auto 24px;
     }
 
-    .hero-cta,
-    .contact-cta {
+    .hero-cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -186,8 +173,15 @@
       border-radius: 999px;
       padding: 15px 28px;
       font-size: 1rem;
-      font-weight: 800;
-      box
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.18);
+    }
 
     .glass-card {
       background: var(--card);
@@ -198,22 +192,16 @@
     }
 
     .about-card {
-      padding: 42px;
-      max-width: 960px;
+      padding: 38px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    .about-intro {
-      max-width: 760px;
-      margin: 0 auto 30px;
-      text-align: center;
+    .about-card p.intro {
       color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .about-intro strong {
-      color: var(--text);
-      font-weight: 800;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 26px;
     }
 
     .point-grid {
@@ -224,101 +212,59 @@
     }
 
     .point {
-      background: rgba(255,255,255,0.68);
+      background: rgba(255,255,255,0.62);
       border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
+      border-radius: 20px;
+      padding: 22px;
     }
 
     .point span {
       display: inline-block;
-      font-size: 0.82rem;
-      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 12px;
-      font-weight: 800;
+      margin-bottom: 10px;
+      font-weight: 700;
     }
 
     .point p {
-      font-size: 1rem;
+      font-size: 0.98rem;
       color: #1c1c1a;
-      line-height: 1.75;
     }
 
-    .point strong {
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    
-    .testimonial-shell {
-      position: relative;
-    }
-
-    .testimonial-toolbar {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .carousel-btn {
-      width: 46px;
-      height: 46px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.9);
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.1rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    .testimonial-carousel {
+    .testimonial-grid {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: calc(33.333% - 15px);
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      padding-bottom: 8px;
-      scrollbar-width: none;
-    }
-
-    .testimonial-carousel::-webkit-scrollbar {
-      display: none;
+      margin-top: 18px;
     }
 
     .testimonial {
-      scroll-snap-align: start;
-      padding: 18px;
-      min-height: 360px;
+      padding: 28px;
+      min-height: 220px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-    }
-
-    .testimonial-photo {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      border-radius: 18px;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      background: rgba(0,0,0,0.05);
+      justify-content: space-between;
     }
 
     .testimonial .quote {
-      font-size: 1rem;
+      font-size: 1.02rem;
       color: #1b1b18;
-      line-height: 1.7;
+      margin-bottom: 18px;
     }
 
     .testimonial .name {
       color: var(--muted);
       font-size: 0.92rem;
-      font-weight: 700;
-      margin-top: auto;
+      font-weight: 600;
+    }
+
+    .placeholder-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+      margin-top: 16px;
     }
 
     .trial-wrap {
@@ -350,10 +296,6 @@
       right: -60px;
       pointer-events: none;
     }
-    .trial-content {
-      position: relative;
-      z-index: 1;
-    }
 
     .trial-label {
       color: #f6e8b8;
@@ -373,16 +315,16 @@
 
     .trial-card p {
       color: rgba(255,255,255,0.82);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .price {
-      display: block;
+      display: inline-block;
       font-size: clamp(3rem, 8vw, 5.5rem);
       line-height: 1;
       font-weight: 800;
       color: white;
-      margin: 8px 0 16px;
+      margin: 6px 0 20px;
       animation: pulsePrice 1.8s infinite ease-in-out;
     }
 
@@ -395,13 +337,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
       background: white;
       color: #111;
-      padding: 15px 26px;
+      padding: 16px 28px;
       border-radius: 999px;
       font-weight: 800;
       transition: transform 0.2s ease;
-      margin-top: 2px;
     }
 
     .trial-btn:hover {
@@ -425,14 +367,8 @@
       letter-spacing: -0.03em;
     }
 
-    .embed-note {
-      color: var(--muted);
-      font-size: 0.96rem;
-      margin-bottom: 14px;
-    }
-
     .embed-placeholder {
-      height: 240px;
+      height: 260px;
       border: 1.5px dashed rgba(17,17,17,0.18);
       border-radius: 20px;
       display: flex;
@@ -442,18 +378,6 @@
       text-align: center;
       padding: 18px;
       background: rgba(255,255,255,0.44);
-    }
-
-    .embed-card code {
-      display: block;
-      margin-top: 12px;
-      font-size: 0.85rem;
-      color: #333;
-      word-break: break-word;
-      background: rgba(255,255,255,0.7);
-      border-radius: 14px;
-      padding: 12px;
-      border: 1px solid var(--line);
     }
 
     .contact-card {
@@ -474,7 +398,6 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-bottom: 24px;
-      align-items: stretch;
     }
 
     .contact-item {
@@ -482,10 +405,6 @@
       border-radius: 20px;
       background: rgba(255,255,255,0.62);
       border: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 122px;
     }
 
     .contact-item .label {
@@ -494,20 +413,31 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-weight: 700;
     }
 
     .contact-item .value {
-      font-size: 0.94rem;
+      font-size: 1rem;
       font-weight: 600;
       word-break: break-word;
-      overflow-wrap: anywhere;
-      line-height: 1.45;
-      display: flex;
+    }
+
+    .contact-cta {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 44px;
+      background: #111;
+      color: white;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    }
+
+    .contact-cta:hover {
+      transform: translateY(-2px);
     }
 
     .footer {
@@ -541,13 +471,10 @@
 
     @media (max-width: 980px) {
       .point-grid,
+      .testimonial-grid,
       .media-grid,
       .contact-list {
         grid-template-columns: 1fr;
-      }
-
-      .testimonial-carousel {
-        grid-auto-columns: 85%;
       }
 
       .hero {
@@ -563,11 +490,6 @@
       .logo-box img {
         height: 44px;
       }
-
-      .trial-card::after {
-        left: 12px;
-        right: 12px;
-      }
     }
   </style>
 </head>
@@ -576,7 +498,7 @@
   <header class="topbar">
     <div class="container logo-wrap">
       <div class="logo-box">
-        <!-- Replace this with your own logo -->
+        <!-- Replace logo-placeholder with your own image -->
         <!-- Example: <img src="logo.png" alt="MathScienceDojo Logo"> -->
         <div class="logo-placeholder">YOUR LOGO HERE</div>
       </div>
@@ -585,120 +507,209 @@
 
   <section class="hero" id="home">
     <div class="hero-content">
-      <div class="hero-badge"><span class="dot"></span> Limited slots available</div>
-      <h1>Maths &amp; Science, made simpler.</h1>
-      <p>Focused online tuition for Primary 5 &amp; 6 students.</p>
-      <a href="https://wa.me/6593508124" class="hero-cta" target="_blank">Enquire now</a>
+      <div class="hero-badge" style="font-size:1.05rem; padding:12px 20px;">
+🔥 LIMITED SLOTS AVAILABLE
+</div>
+      <h1>Maths & Science, made simpler.</h1>
+      <p>Focused online tuition for Primary 5 & 6 students.</p>
+      <a href="https://wa.me/6593508124" class="hero-cta pulse-btn" target="_blank">
+ENQUIRE NOW
+</a>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <h2 class="section-title">About MathScienceDojo</h2>
-      <p class="section-subtitle">Focused online tuition for Primary 5 and 6 Maths and Science.</p>
+<div style="max-width:1000px; margin:60px auto; padding:0 20px; font-family:Manrope, sans-serif;">
 
-      <div class="about-card glass-card">
-        <p class="about-intro">
-          We keep lessons <strong>clear</strong>, <strong>structured</strong>, and <strong>results-focused</strong> so students can build confidence step by step.
-        </p>
-
-        <div class="point-grid">
-          <div class="point">
-            <span>Clarity</span>
-            <p>
-              We break down <strong>key concepts</strong> into simple steps so students can understand better, practise smarter, and build real confidence over time.
-            </p>
-          </div>
-          <div class="point">
-            <span>Flexible</span>
-            <p>
-              Choose between <strong>1-to-1</strong> or <strong>group lessons</strong> based on your child’s learning needs. Pricing differs, so enquire for details.
-            </p>
-          </div>
-          <div class="point">
-            <span>Online</span>
-            <p>
-              Our online classes save <strong>travel time</strong>, keep learning convenient, and make it easier for students to stay consistent every week.
-            </p>
-          </div>
-        </div>
-      </div>
+  <!-- TOP TITLE -->
+  <div style="text-align:center; margin-bottom:28px;">
+    <div style="font-size:52px; font-weight:800; color:#111; line-height:1.1; margin-bottom:10px;">
+      About MathScienceDojo
     </div>
+    <div style="font-size:18px; color:#555; line-height:1.5;">
+      PSLE-focused Maths &amp; Science tuition for Primary 5 &amp; 6.
+    </div>
+  </div>
+
+  <!-- BIG CONTAINER -->
+  <div style="background:#fafafa; border-radius:24px; padding:30px;">
+
+    <!-- 3 BOXES -->
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+      <!-- CLARITY -->
+      <div style="flex:1; min-width:260px; background:white; border-radius:18px; padding:24px; font-family:Manrope, sans-serif;">
+        
+        <div style="font-size:14px; letter-spacing:2px; color:#888; margin-bottom:12px; font-weight:700;">
+          CLARITY
+        </div>
+
+        <div style="font-size:18px; line-height:1.8; color:#111;">
+          <strong>Clear explanations</strong> that break down difficult concepts 
+          <strong>step by step</strong>, helping students truly understand 
+          instead of just memorising.
+        </div>
+
+      </div>
+
+      <!-- FLEXIBLE -->
+      <div style="flex:1; min-width:260px; background:white; border-radius:18px; padding:24px; font-family:Manrope, sans-serif;">
+        
+        <div style="font-size:14px; letter-spacing:2px; color:#888; margin-bottom:12px; font-weight:700;">
+          FLEXIBLE
+        </div>
+
+        <div style="font-size:18px; line-height:1.8; color:#111;">
+          <strong>1-to-1</strong> or <strong>small group</strong> lessons tailored 
+          to your child’s pace, allowing more <strong>attention</strong> and better 
+          <strong>improvement</strong>.
+        </div>
+
+      </div>
+
+      <!-- ONLINE -->
+      <div style="flex:1; min-width:260px; background:white; border-radius:18px; padding:24px; font-family:Manrope, sans-serif;">
+        
+        <div style="font-size:14px; letter-spacing:2px; color:#888; margin-bottom:12px; font-weight:700;">
+          ONLINE
+        </div>
+
+        <div style="font-size:18px; line-height:1.8; color:#111;">
+          <strong>Learn from home</strong> with structured lessons and guided practice, 
+          <strong>saving time</strong> while staying <strong>consistent</strong> and 
+          <strong>focused</strong>.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
   </section>
 
   <section class="section" id="testimonials">
     <div class="container">
-      <h2 class="section-title">Parent Testimonials</h2>
+     <div style="max-width:1100px; margin:60px auto; padding:0 20px; font-family:Manrope, sans-serif;">
 
-      <div class="testimonial-shell">
-        <div class="testimonial-toolbar">
-          <button class="carousel-btn" onclick="scrollTestimonials(-1)" aria-label="Previous testimonial">&#8592;</button>
-          <button class="carousel-btn" onclick="scrollTestimonials(1)" aria-label="Next testimonial">&#8594;</button>
-        </div>
+  <div style="text-align:center; margin-bottom:30px;">
+    <div style="font-size:38px; font-weight:800;">Parent Testimonials</div>
+  </div>
 
-        <div class="testimonial-carousel" id="testimonialCarousel">
-          <div class="testimonial glass-card">
-            <img src="testimonial-1.jpg" alt="Parent testimonial 1" class="testimonial-photo">
-            <div class="quote">“Replace this with your actual testimonial text. You can also use a screenshot of a WhatsApp message or parent feedback image here.”</div>
-            <div class="name">— Parent Name</div>
-          </div>
+  <div style="display:flex; gap:20px; overflow-x:auto; padding-bottom:10px; scroll-snap-type:x mandatory;">
 
-          <div class="testimonial glass-card">
-            <img src="testimonial-2.jpg" alt="Parent testimonial 2" class="testimonial-photo">
-            <div class="quote">“This layout is made for pictures plus short written feedback, so it looks more real and easier to swipe through on mobile.”</div>
-            <div class="name">— Parent Name</div>
-          </div>
-
-          <div class="testimonial glass-card">
-            <img src="testimonial-3.jpg" alt="Parent testimonial 3" class="testimonial-photo">
-            <div class="quote">“You can duplicate more cards later if you want to add more parent screenshots, results, or review photos.”</div>
-            <div class="name">— Parent Name</div>
-          </div>
-
-          <div class="testimonial glass-card">
-            <img src="testimonial-4.jpg" alt="Parent testimonial 4" class="testimonial-photo">
-            <div class="quote">“This is another sample slide so the section feels like a proper swipe carousel instead of a static testimonial block.”</div>
-            <div class="name">— Parent Name</div>
-          </div>
-        </div>
+    <!-- TESTIMONIAL 1 -->
+    <div style="min-width:31%; flex:0 0 31%; background:#f8f8f8; border-radius:20px; padding:28px; min-height:260px; box-sizing:border-box; scroll-snap-align:start; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+        “My child improved a lot in Maths after just a few lessons. Concepts are explained very clearly and made easy to understand.”
       </div>
+      <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Parent A</div>
     </div>
+
+    <!-- TESTIMONIAL 2 -->
+    <div style="min-width:31%; flex:0 0 31%; background:#f8f8f8; border-radius:20px; padding:28px; min-height:260px; box-sizing:border-box; scroll-snap-align:start; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+        “Lessons are structured and focused. My child is more confident in Science now and is able to answer questions with less hesitation.”
+      </div>
+      <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Parent B</div>
+    </div>
+
+    <!-- TESTIMONIAL 3 -->
+    <div style="min-width:31%; flex:0 0 31%; background:#f8f8f8; border-radius:20px; padding:28px; min-height:260px; box-sizing:border-box; scroll-snap-align:start; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+        “Very patient and clear teaching style. My child actually enjoys learning now and looks forward to class every week.”
+      </div>
+      <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Parent C</div>
+    </div>
+
+    <!-- TESTIMONIAL 4 -->
+    <div style="min-width:31%; flex:0 0 31%; background:#f8f8f8; border-radius:20px; padding:28px; min-height:260px; box-sizing:border-box; scroll-snap-align:start; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+        “Huge improvement in results within a short time. The lessons are effective, engaging, and easy for my child to follow.”
+      </div>
+      <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Parent D</div>
+    </div>
+
+    <!-- TESTIMONIAL 5 -->
+    <div style="min-width:31%; flex:0 0 31%; background:#f8f8f8; border-radius:20px; padding:28px; min-height:260px; box-sizing:border-box; scroll-snap-align:start; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+        “Classes are engaging and well-paced. My child stays focused throughout and has become much more confident in both subjects.”
+      </div>
+      <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Parent E</div>
+    </div>
+
+  </div>
+
+</div>
   </section>
 
   <section class="section" id="trial">
     <div class="container">
       <div class="trial-wrap">
-        <div class="trial-card">
-          <div class="trial-content">
-            <div class="trial-label">Trial Class Available</div>
-            <h3>Start with a trial</h3>
-            <p>Tap below to enquire and secure a slot.</p>
-            <div class="price">$10</div>
-            <a href="https://wa.me/6593508124" class="trial-btn" target="_blank">Enquire for trial class</a>
-          </div>
-        </div>
+        <a href="https://wa.me/6593508124" class="trial-card" target="_blank">
+          <div class="trial-label">Trial Class Available</div>
+          <h3>Start with a trial</h3>
+          <p>Tap below to enquire and secure a slot.</p>
+          <div style="text-decoration:line-through; opacity:0.6; font-size:2rem;">
+$49
+</div>
+<div class="price">$10</div>
+<br>
+<div class="trial-btn">ENQUIRE NOW</div>
+        </a>
       </div>
     </div>
   </section>
 
   <section class="section" id="media">
     <div class="container">
-      <h2 class="section-title">Watch Our Content</h2>
-      <p class="section-subtitle">You can embed your TikTok, Instagram, and Facebook content here in a simple 2 by 2 layout.</p>
+     
+     <div style="max-width:1100px; margin:60px auto; padding:0 20px; font-family:Manrope, sans-serif;">
 
-      <div class="media-grid">
-        <div class="embed-card glass-card">
-          <h3>TikTok</h3>
-          <p class="embed-note">Replace the box below with TikTok embed code.</p>
-          <div class="embed-placeholder">Paste your TikTok embed here</div>
-          <code>&lt;blockquote class="tiktok-embed"&gt;...&lt;/blockquote&gt;</code>
-        </div>
+  <div style="text-align:center; margin-bottom:30px;">
+    <div style="font-size:38px; font-weight:800; color:#111;">Watch Our Content</div>
+    <div style="font-size:18px; color:#666; margin-top:10px;">
+      View our latest TikTok and Instagram content here.
+    </div>
+  </div>
 
-        <div class="embed-card glass-card">
-          <h3>Instagram</h3>
-          <p class="embed-note">Replace the box below with Instagram embed code.</p>
-          <div class="embed-placeholder">Paste your Instagram embed here</div>
-          <code>&lt;blockquote class="instagram-media"&gt;...&lt;/blockquote&gt;</code>
+  <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+
+    <!-- TikTok -->
+    <div style="flex:1; min-width:420px; max-width:520px; background:#fafafa; border-radius:24px; padding:24px;">
+      <div style="font-size:20px; font-weight:700; margin-bottom:18px;">TikTok</div>
+
+      <div style="border-radius:20px; overflow:hidden; background:white;">
+        <iframe
+          src="https://www.tiktok.com/player/v1/7613629325710986503"
+          width="100%"
+          height="780"
+          frameborder="0"
+          allowfullscreen
+          scrolling="no">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Instagram -->
+    <div style="flex:1; min-width:420px; max-width:520px; background:#fafafa; border-radius:24px; padding:24px;">
+      <div style="font-size:20px; font-weight:700; margin-bottom:18px;">Instagram</div>
+
+      <div style="border-radius:20px; overflow:hidden; background:white; padding:10px;">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DWJJSZ1k7eH/?hl=en"
+          data-instgrm-version="14"
+          style="margin:0 auto; max-width:540px; min-width:326px; width:100%;">
+        </blockquote>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script async src="https://www.instagram.com/embed.js"></script>
         </div>
       </div>
     </div>
@@ -707,7 +718,7 @@
   <section class="section" id="contact">
     <div class="container">
       <h2 class="section-title">Contact Us</h2>
-      <p class="section-subtitle">Enquire with us for more information.</p>
+      <p class="section-subtitle">DM us for more information.</p>
 
       <div class="contact-card glass-card">
         <div class="contact-main">The fastest way to reach us is via WhatsApp.</div>
@@ -715,7 +726,9 @@
         <div class="contact-list">
           <div class="contact-item">
             <span class="label">📧 Email</span>
-            <div class="value">mathsciencedojo@gmail.com</div>
+            <div class="value" style="word-break:normal;">
+mathsciencedojo@gmail.com
+</div>
           </div>
 
           <div class="contact-item">
@@ -743,22 +756,6 @@
   <a href="https://wa.me/6593508124" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     💬
   </a>
-
-  <script>
-    function scrollTestimonials(direction) {
-      const carousel = document.getElementById('testimonialCarousel');
-      const cardWidth = carousel.querySelector('.testimonial').offsetWidth + 22;
-      carousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-    }
-  </script>
-
-  <!--
-    TIKTOK SCRIPT (add once, before closing body if you use TikTok embed)
-    <script async src="https://www.tiktok.com/embed.js"></script>
-
-    INSTAGRAM SCRIPT (add once, before closing body if you use Instagram embed)
-    <script async src="//www.instagram.com/embed.js"></script>
-  -->
 
 </body>
 </html>
