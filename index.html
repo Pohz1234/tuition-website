@@ -495,44 +495,151 @@
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="container logo-wrap">
-      <div class="logo-box">
-        <!-- Replace logo-placeholder with your own image -->
-        <!-- Example: <img src="logo.png" alt="MathScienceDojo Logo"> -->
-        <div class="logo-placeholder">YOUR LOGO HERE</div>
-      </div>
-    </div>
-  </header>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
- <section id="home" 
-style="
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-
-  background:
-  linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.75) 0%,
-    rgba(0,0,0,0.5) 40%,
-    rgba(0,0,0,0.2) 70%,
-    rgba(255,255,255,0.2) 100%
-  ),
-  url('hero.jpg') center/cover no-repeat;
+<section style="
+  position: relative;
+  height: 100vh;
+  background: url('hero.JPG') center/110% no-repeat;
+  background-attachment: fixed;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 ">
-    <div class="hero-content">
-      <div class="hero-badge" style="font-size:1.05rem; padding:12px 20px;">
-🔥 LIMITED SLOTS AVAILABLE
+
+  <!-- dark-to-light overlay -->
+  <div style="
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.78) 0%,
+      rgba(0,0,0,0.45) 38%,
+      rgba(255,255,255,0.97) 100%
+    );
+    z-index: 1;
+  "></div>
+
+  <!-- top long logo -->
+  <div style="
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+">
+ <img src="Mainlogo.png" style="
+  height: 500px;
+  width: auto;
+  display: block;
+">
 </div>
-      <h1>Maths & Science, made simpler.</h1>
-      <p>Focused online tuition for Primary 5 & 6 students.</p>
-      <a href="https://wa.me/6593508124" class="hero-cta pulse-btn" target="_blank">
-ENQUIRE NOW
-</a>
+
+  <!-- center content -->
+  <div style="
+    position: relative;
+    z-index: 2;
+    margin-top: 85px;
+    max-width: 900px;
+    padding: 0 20px;
+  ">
+
+    <!-- small middle logo -->
+   <div style="
+  margin-bottom: -120px;
+  transform: translateY(-100px);
+">
+  <img src="smalllogo.png" style="
+  height: 250px;
+  width: auto;
+">
+</div>
+
+    <!-- limited slots -->
+    <div style="
+      display: inline-block;
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.16);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      color: #fff7d6;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.14);
+    ">
+      🔥 LIMITED SLOTS AVAILABLE
+    </div>
+
+    <!-- main heading -->
+    <h1 style="
+      margin: 0 0 12px 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 56px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -1.4px;
+      color: white;
+      text-shadow: 0 8px 25px rgba(0,0,0,0.22);
+    ">
+      Maths &amp; Science, made simpler.
+    </h1>
+
+    <!-- subheading -->
+    <p style="
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 21px;
+      line-height: 1.45;
+      font-weight: 600;
+      color: rgba(255,255,255,0.96);
+      text-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    ">
+      Focused online tuition for Primary 5 &amp; 6 students.
+    </p>
+
+    <!-- button -->
+    <div style="margin-top: 34px;">
+      <a href="https://wa.me/6593508124" style="
+        display: inline-block;
+        padding: 16px 34px;
+        background: white;
+        color: black;
+        border-radius: 999px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        animation: pulseZoom 1.8s infinite ease-in-out;
+      ">
+        ENQUIRE NOW
+      </a>
+    </div>
+
+  </div>
+
+  <!-- animation -->
+  <style>
+    @keyframes pulseZoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 38px !important;
+      }
+    }
+  </style>
+</section>
     </div>
   </section>
 
