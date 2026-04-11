@@ -12,7 +12,7 @@
     }
 
     :root {
-      --bg: #f7f7f4;
+      --bg: #f5f4f0;
       --text: #111111;
       --muted: #5f5f5a;
       --card: rgba(255,255,255,0.72);
@@ -554,6 +554,7 @@
   }
 }
 .testimonial-slider {
+  scroll-behavior: smooth;
   display: flex;
   gap: 20px;
   overflow-x: auto;
@@ -567,6 +568,7 @@
 }
 
 .testimonial-slide {
+  transition: transform 0.3s ease;
   min-width: 31%;
   flex: 0 0 31%;
   background: #f8f8f8;
@@ -582,12 +584,31 @@
 
 @media (max-width: 768px) {
   .testimonial-slide {
-    min-width: 85%;
-    flex: 0 0 85%;
+    min-width: 78%;
+    flex: 0 0 78%;
   }
 }
+ .about-heading {
+    font-size: 52px;
+    font-weight: 800;
+    color: #111;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  @media (max-width: 768px) {
+    .about-heading {
+      font-size: 34px;
+      line-height: 1.15;
+      padding: 0 8px;
+    }
+  }
 </style>
+
 </head>
+  
 <body>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -629,9 +650,9 @@
 
   <!-- TOP TITLE -->
   <div style="text-align:center; margin-bottom:28px;">
-    <div style="font-size:52px; font-weight:800; color:#111; line-height:1.1; margin-bottom:10px;">
-      About MathScienceDojo
-    </div>
+    <div class="about-heading">
+  About MathScienceDojo
+</div>
     <div style="font-size:18px; color:#555; line-height:1.5;">
       PSLE-focused Maths &amp; Science tuition for Primary 5 &amp; 6.
     </div>
@@ -847,7 +868,7 @@ mathsciencedojo@gmail.com
     </div>
   </section>
 
-  <footer class="footer">
+   <footer class="footer">
     <div class="container">
       © 2026 MathScienceDojo. All rights reserved.
     </div>
@@ -857,5 +878,69 @@ mathsciencedojo@gmail.com
     💬
   </a>
 
+  <script>
+    const slider = document.querySelector('.testimonial-slider');
+
+    if (slider) {
+      let autoScroll;
+      let isUserInteracting = false;
+
+      function startAutoScroll() {
+        stopAutoScroll();
+
+        autoScroll = setInterval(() => {
+          if (isUserInteracting) return;
+
+          const card = slider.querySelector('.testimonial-slide');
+          if (!card) return;
+
+          const cardWidth = card.offsetWidth + 20;
+          const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+          if (slider.scrollLeft + cardWidth >= maxScrollLeft) {
+            slider.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+          }
+        }, 3000);
+      }
+
+      function stopAutoScroll() {
+        clearInterval(autoScroll);
+      }
+
+      slider.addEventListener('touchstart', () => {
+        isUserInteracting = true;
+        stopAutoScroll();
+      });
+
+      slider.addEventListener('touchend', () => {
+        isUserInteracting = false;
+        startAutoScroll();
+      });
+
+      slider.addEventListener('mouseenter', () => {
+        isUserInteracting = true;
+        stopAutoScroll();
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        isUserInteracting = false;
+        startAutoScroll();
+      });
+
+      slider.addEventListener('mousedown', () => {
+        isUserInteracting = true;
+        stopAutoScroll();
+      });
+
+      slider.addEventListener('mouseup', () => {
+        isUserInteracting = false;
+        startAutoScroll();
+      });
+
+      startAutoScroll();
+    }
+  </script>
 </body>
 </html>
