@@ -766,6 +766,37 @@
     gap: 10px;
   }
 }
+.testimonial-wrapper {
+  position: relative;
+}
+
+.testimonial-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.testimonial-nav.prev {
+  left: -10px;
+}
+
+.testimonial-nav.next {
+  right: -10px;
+}
+
+strong {
+  color: #111;
+  font-weight: 700;
+}
 </style>
 
 </head>
@@ -907,7 +938,7 @@
   <span class="arrow">→</span>
   <span class="after">76%</span>
 </div>
-            <p>Candice started off with weak fundamentals and found Science challenging. With 3 months of focused guidance, disciplined practice, and sticking to a structured schedule, she gradually built her confidence and achieved strong improvement.</p>
+            <p>Candice started off with weak fundamentals and found Science challenging. With 3 months of focused guidance, <strong>disciplined practice</strong>, and sticking to a <strong>Structure Schedule</strong>, she gradually built her <strong>confidence</strong> and achieved strong improvement.</p>
           </div>
         </div>
 
@@ -930,7 +961,7 @@
   <span class="arrow">→</span>
   <span class="after">89%</span>
 </div>
-            <p>Marcus may be playful, but he understands when it’s time to get serious. Over 4 months of guided practice, with a fully locked-in June, he stayed disciplined, followed the structured programme, and achieved significant improvement in both confidence and results.</p>
+            <p>Marcus may be playful, but he understands when it’s time to get serious. Over 4 months of <strong>guided practice</strong>, with a fully locked-in June, he stayed <strong>disciplined, followed the structured programme</strong>, and achieved significant improvement in both <strong>confidence and results</strong>.</p>
           </div>
         </div>
 
@@ -953,7 +984,7 @@
   <span class="arrow">→</span>
   <span class="after">88%</span>
 </div>
-            <p>Felicia initially had weak foundational understanding, but with structured notes and clear step-by-step explanations, she built her confidence and is now able to tackle most questions with ease.</p>
+            <p>Felicia initially had weak foundational understanding, but with <strong>structured notes and clear step-by-step explanations</strong>, she built her <strong>confidence</strong> and is now able to tackle most questions with ease.</p>
           </div>
         </div>
 
@@ -976,7 +1007,7 @@
   <span class="arrow">→</span>
   <span class="after">76%</span>
 </div>
-            <p>Javier was not always confident in Science, but with structured notes, disciplined learning, and consistent practice of up to two lessons per week, he grew more motivated and significantly improved his confidence and exam technique.</p>
+            <p>Javier was not always confident in Science, but with <strong>structured notes, disciplined learning</strong>, and consistent practice of up to two lessons per week, he grew more motivated and <strong>significantly improved his confidence</strong> and exam technique.</p>
           </div>
         </div>
 
@@ -999,7 +1030,7 @@
   <span class="arrow">→</span>
   <span class="after">100%</span>
 </div>
-            <p>Jessy already had a solid foundation, but required more polishing. With consistent practice and focused refinement, everything came together, resulting in stronger confidence and improved exam performance.</p>
+            <p>Jessy already had a solid foundation, but required more polishing. With <strong>consistent practice and focused refinement</strong>, everything came together, resulting in <strong>stronger confidence</strong> and improved exam performance.</p>
           </div>
         </div>
 
@@ -1022,7 +1053,7 @@
   <span class="arrow">→</span>
   <span class="after">86%</span>
 </div>
-            <p>Alan started off failing and struggled to understand most concepts in class. With 3 months of focused tuition, he rebuilt his foundation and made a huge improvement in both understanding and results.</p>
+            <p>Alan started off failing and struggled to understand most concepts in class. With 3 months of focused tuition, he <strong>rebuilt his foundation and made a huge improvement</strong> in both understanding and results.</p>
           </div>
         </div>
 
@@ -1035,53 +1066,66 @@
   <div class="results-dots" id="resultsDots"></div>
 </section>
   <section class="section" id="testimonials">
-    <div class="container">
-     <div style="max-width:1100px; margin:60px auto; padding:0 20px; font-family:Manrope, sans-serif;">
+  <div class="container">
+    <div style="max-width:1100px; margin:60px auto; padding:0 20px; font-family:Manrope, sans-serif;">
 
- <div style="text-align:center; margin-bottom:30px;">
-  <div style="font-size:38px; font-weight:800;">Parent Testimonials</div>
-</div>
+      <div style="text-align:center; margin-bottom:30px;">
+        <div style="font-size:38px; font-weight:800;">Parent Testimonials</div>
+      </div>
 
-<div class="testimonial-slider">
+      <div class="testimonial-wrapper">
+        <button class="testimonial-nav prev" aria-label="Previous testimonial">&#10094;</button>
 
-  <div class="testimonial-slide">
-    <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
-      “Thank you JP for all the support and motivation you have given to Umar. Indeed engaging you was the right choice! Umar became more motivated to do well and we like that shift in energy in him. He did his very best and we can see that he really wants to succeed, Whatever may be the result, we will be proud of him no matter what”
+        <div class="testimonial-slider">
+          <div class="testimonial-slide">
+            <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+              “Thank you Mr Yeo for all the <strong>support and motivation</strong> you have given to my child. Engaging you was the right choice. My child became more motivated to do well, and we really noticed that <strong>positive shift in attitude</strong>. He did his very best, and we could see that he <strong>genuinely wanted to improve</strong>.”
+            </div>
+            <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;"><strong>— Ms Humairah</strong></div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+              “We saw a big improvement in both <strong>results and confidence</strong>. My child used to struggle with Science concepts, but now is able to understand and answer questions much more clearly. Lessons are <strong>structured and very effective</strong>.”
+            </div>
+            <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;"><strong>— Mrs Tan</strong></div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+              “My child was not very confident in Maths before, but after a few months of lessons, we could see <strong>clear improvement</strong>. The teaching is very patient and <strong>simple to follow</strong>, which really helped build confidence.”
+            </div>
+            <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;"><strong>— Ms Joanna</strong></div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+              “What stood out to us was the structured approach to learning.  <strong>Lessons are focused and not rushed</strong>, and my child is guided through each topic clearly. Over time, we noticed better <strong>discipline in studying</strong> and more consistency in revision. The improvement did not happen overnight, but it was steady and very noticeable.”
+            </div>
+            <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;"><strong>— Ms Chua</strong></div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+              “Clear teaching and <strong>very patient throughout</strong>. My child enjoys the lessons and is now much <strong>more confident</strong> in both Maths and Science. We’ve also seen a good improvement in results over time.”
+            </div>
+            <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;"><strong>— Mr Raj</strong></div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
+              “Beyond just improving grades, we noticed a <strong>big change in attitude</strong>. My child became more <strong>disciplined, more consistent, and showed a genuine desire to improve</strong>. The lessons didn’t just help with results, but also built better <strong>study habits</strong> and motivation to do well.”
+            </div>
+            <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;"><strong>— Mr Ahmad</strong></div>
+          </div>
+        </div>
+
+        <button class="testimonial-nav next" aria-label="Next testimonial">&#10095;</button>
+      </div>
+
     </div>
-    <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Ms Humairah</div>
   </div>
-
-  <div class="testimonial-slide">
-    <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
-      “Lessons are structured and focused. My child is more confident in Science now and is able to answer questions with less hesitation.”
-    </div>
-    <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Mr Lee</div>
-  </div>
-
-  <div class="testimonial-slide">
-    <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
-      “Very patient and clear teaching style. My child actually enjoys learning now and looks forward to class every week.”
-    </div>
-    <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Ms Joanna</div>
-  </div>
-
-  <div class="testimonial-slide">
-    <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
-      “Huge improvement in results within a short time. The lessons are effective, engaging, and easy for my child to follow.”
-    </div>
-    <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Mrs Cindy Chua</div>
-  </div>
-
-  <div class="testimonial-slide">
-    <div style="font-size:16px; line-height:1.8; color:#222; word-break:break-word;">
-      “Classes are engaging and well-paced. My child stays focused throughout and has become much more confident in both subjects.”
-    </div>
-    <div style="margin-top:24px; font-weight:600; color:#666; font-size:16px;">— Mr Donovan</div>
-  </div>
-  </div>
-
-</div>
-  </section>
+</section>
 
   <section class="section" id="trial">
     <div class="container">
@@ -1258,7 +1302,23 @@ mathsciencedojo@gmail.com
       });
 
       startAutoScroll();
+      const prevBtn = document.querySelector('.testimonial-nav.prev');
+const nextBtn = document.querySelector('.testimonial-nav.next');
+
+if (prevBtn && nextBtn) {
+  const card = slider.querySelector('.testimonial-slide');
+  const scrollAmount = card.offsetWidth + 20;
+
+  nextBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+}
     }
+    
   </script>
   <script>
 (function () {
@@ -1356,6 +1416,7 @@ mathsciencedojo@gmail.com
   updateCarousel();
   startAutoSlide();
 })();
+
 </script>
 </body>
 </html>
